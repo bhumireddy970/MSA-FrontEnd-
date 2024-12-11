@@ -47,5 +47,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "msabackend-production-7c78.up.railway.app"
+  "proxy": "https://msabackend-production-7c78.up.railway.app"
 }
