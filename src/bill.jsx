@@ -72,17 +72,6 @@ const BillPage = () => {
     }
   };
 
-  if (!address || !city || !stateField || !zip) {
-    return (
-      <div className="bill-page">
-        <h2>Invalid Order Details</h2>
-        <button onClick={() => navigate("/body/cart")} className="back-button">
-          Go to Cart
-        </button>
-      </div>
-    );
-  }
-
   return (
     <div className="bill-page receipt">
       {loading ? (
