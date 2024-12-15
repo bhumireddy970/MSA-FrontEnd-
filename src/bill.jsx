@@ -16,18 +16,6 @@ const BillPage = () => {
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const { address, city, stateField, zip } = location.state || {};
 
-  // If shipping address or cart details are missing, show an error message
-  if (!address || !city || !stateField || !zip) {
-    return (
-      <div className="bill-page">
-        <h2>Invalid Order Details</h2>
-        <button onClick={() => navigate("/body/cart")} className="back-button">
-          Go to Cart
-        </button>
-      </div>
-    );
-  }
-
   // Fetch cart items and calculate total on component mount
   useEffect(() => {
     const fetchCartItems = async () => {
@@ -83,6 +71,17 @@ const BillPage = () => {
       alert("There was an error confirming your order. Please try again.");
     }
   };
+
+  if (!address || !city || !stateField || !zip) {
+    return (
+      <div className="bill-page">
+        <h2>Invalid Order Details</h2>
+        <button onClick={() => navigate("/body/cart")} className="back-button">
+          Go to Cart
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div className="bill-page receipt">
